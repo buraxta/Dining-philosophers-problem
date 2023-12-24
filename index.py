@@ -54,6 +54,7 @@ class Philosopher(threading.Thread):
         )
 
         if lower_fork.pickup(self.index):
+            time.sleep(5 + random.random() * 5)
             if higher_fork.pickup(self.index):
                 self.spaghetti -= 1
                 self.eating = True
